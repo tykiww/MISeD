@@ -1,7 +1,7 @@
 
 import json
 from urllib import request
-
+    
 class MISeDData:
     def __init__(self, input):
         # URL of the raw file. Kinda dangerous but whateva.
@@ -54,7 +54,7 @@ class MISeDData:
             return data
     
     # Convert necessary data
-    def get(self):
+    def get(self, local=True):
         
         # Get the data
         if local:
