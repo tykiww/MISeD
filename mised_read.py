@@ -54,7 +54,7 @@ class MISeDData:
             return data
     
     # Convert necessary data
-    def get(self,read_locally):
+    def get(self,read_locally=True):
         
         # Get the data
         if read_locally:
