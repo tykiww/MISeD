@@ -1,8 +1,10 @@
+
 import json
 from urllib import request
 
 class MISeDData:
     def __init__(self, input):
+        # URL of the raw file. Kinda dangerous but whateva.
         self.input = input
         self.url = f"https://raw.githubusercontent.com/tykiww/MISeD/main/mised/{self.input}.jsonl"
         self.local = f'mised/{input}.jsonl'
@@ -40,7 +42,6 @@ class MISeDData:
                 return data
 
     def retrieve_data_url(self):
-      """Only if you must."""
         if self.input not in self.options:
             print('ha, sucka. choose train, test, or validation')
             return None
@@ -53,14 +54,14 @@ class MISeDData:
             return data
     
     # Convert necessary data
-    def get(self, local=True):
+    def get(self):
         
         # Get the data
         if local:
             data = self.retrieve_data_local()
         else:
             data = self.retrieve_data_url()
-        
+
         # empty list that we will eventually return.
         collect = []
 
@@ -96,6 +97,8 @@ class MISeDData:
                                 'snippet': snippet,
                                 'speakers': speakers,
                                 })
+
+        return collect
 
 
 if __name__ == "__main__":
