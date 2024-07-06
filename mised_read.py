@@ -54,10 +54,10 @@ class MISeDData:
             return data
     
     # Convert necessary data
-    def get(self, local=True):
+    def get(self,read_locally):
         
         # Get the data
-        if local:
+        if read_locally:
             data = self.retrieve_data_local()
         else:
             data = self.retrieve_data_url()
