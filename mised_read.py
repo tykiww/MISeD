@@ -53,11 +53,14 @@ class MISeDData:
             return data
     
     # Convert necessary data
-    def get(self):
+    def get(self, local=True):
         
         # Get the data
-        data = self.retrieve_data_local()
-
+        if local:
+            data = self.retrieve_data_local()
+        else:
+            data = self.retrieve_data_url()
+        
         # empty list that we will eventually return.
         collect = []
 
