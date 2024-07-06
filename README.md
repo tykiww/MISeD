@@ -1,4 +1,4 @@
-\* cloned repository to manually correct some data \*
+\* cloned repository to manually correct some unclean text from jsonl files \*
 
 This repository contains the **MISeD** (Meeting Information Seeking Dialogs) dataset - an information-seeking dialog dataset over meeting transcripts. 
 
@@ -17,8 +17,29 @@ For training and evaluating an agent model, each dialog is divided into task ins
 
 The **WOZ** dataset is a fully manual version of MISeD, aimed to objectively test the value of training models with the **MISeD** data.
 
+For those that want to use the helper class to load data, just clone this repository and directly pull the module or 
+This should reduce time to get the data trainable into an instruction set.
+
+```
+# example pulling the training dataset
+from mised_read import MISeDData
+
+retriever = MISeDData('train') # only retrieves train, test, and validation as inputs.
+data = retriever.get() # just a simple get.
+```
+
+Sample output snippet.
+
+[{'query': 'Can you summarize the main points of the discussion on remote control design?',
+  'response': 'Here are the main points of the discussion on remote control design:\n\n* The remote control should be user-friendly and accessible to a wide range of users, including 
+older adults and children.\n* The remote should have a simple and intuitive design, with clear and easily recognizable buttons.\n* The remote could have a combination of physical 
+buttons and an LCD display with menus for additional functions.\n* The remote could have a flip-top design to save space and provide a larger screen for the LCD display.',
+ 'snippet': "Project Manager: Um I'm Sarah, the Project Manager and this is our first meeting, surprisingly enough. ...,
+ 'speakers': ['Project Manager', 'Industrial Designer', 'Marketing', 'User Interface']} ...]
+
+
 ### Citation
-If you use MISeD in your research, please cite [Efficient Data Generation for Source-grounded Information-seeking Dialogs: A Use Case for Meeting Transcripts](https://arxiv.org/pdf/2405.01121).
+[Efficient Data Generation for Source-grounded Information-seeking Dialogs: A Use Case for Meeting Transcripts](https://arxiv.org/pdf/2405.01121).
 ```
 @misc{golany2024efficient,
       title={Efficient Data Generation for Source-grounded Information-seeking Dialogs: A Use Case for Meeting Transcripts}, 
