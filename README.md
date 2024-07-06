@@ -1,3 +1,5 @@
+\* cloned repository to manually correct some data \*
+
 This repository contains the **MISeD** (Meeting Information Seeking Dialogs) dataset - an information-seeking dialog dataset over meeting transcripts. 
 
 The dataset and its semi-automatic creation methodology are described in the paper: [Efficient Data Generation for Source-grounded Information-seeking Dialogs: A Use Case for Meeting Transcripts](https://arxiv.org/pdf/2405.01121).
